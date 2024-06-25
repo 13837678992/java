@@ -1,0 +1,26 @@
+# IntelliJ IDEA 相关
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# 编译输出
+out/
+target/
+build/
+
+# 包文件
+*.jar
+*.war
+*.ear
+
+# 日志文件
+*.log
+
+# 临时文件
+*.tmp
+*.temp
+
+# 操作系统生成的文件
+.DS_Store
+Thumbs.db
