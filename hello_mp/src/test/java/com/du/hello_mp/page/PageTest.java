@@ -33,7 +33,8 @@ public class PageTest {
     //自定义SQL分页查询
     @Test
     public void testCustomMapper() {
-
+        IPage<User> userPage = new Page<>(2, 5);
+        userMapper.selectUserPage(userPage).getRecords().forEach(System.out::println);
     }
 
 
