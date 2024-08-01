@@ -36,6 +36,10 @@
             <version>5.3.9</version> <!-- 版本号应与其他Spring依赖版本一致 -->
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
     </dependencies>
 
 </project>

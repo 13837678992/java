@@ -1,8 +1,8 @@
 package com.du.lease.web.admin.service.impl;
 
-import com.atguigu.lease.model.entity.FeeKey;
-import com.atguigu.lease.web.admin.mapper.FeeKeyMapper;
-import com.atguigu.lease.web.admin.service.FeeKeyService;
+import com.du.lease.model.entity.FeeKey;
+import com.du.lease.web.admin.mapper.FeeKeyMapper;
+import com.du.lease.web.admin.service.FeeKeyService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 

@@ -1,9 +1,9 @@
 package com.du.lease.web.admin.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.atguigu.lease.model.entity.UserInfo;
-import com.atguigu.lease.web.admin.service.UserInfoService;
-import com.atguigu.lease.web.admin.mapper.UserInfoMapper;
+import com.du.lease.model.entity.UserInfo;
+import com.du.lease.web.admin.service.UserInfoService;
+import com.du.lease.web.admin.mapper.UserInfoMapper;
 import org.springframework.stereotype.Service;
 
 /**

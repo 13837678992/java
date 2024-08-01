@@ -1,6 +1,6 @@
 package com.du.lease.web.admin.service;
 
-import com.atguigu.lease.model.entity.ApartmentFeeValue;
+import com.du.lease.model.entity.ApartmentFeeValue;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**

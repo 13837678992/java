@@ -1,9 +1,9 @@
 package com.du.lease.web.admin.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.atguigu.lease.model.entity.AttrValue;
-import com.atguigu.lease.web.admin.service.AttrValueService;
-import com.atguigu.lease.web.admin.mapper.AttrValueMapper;
+import com.du.lease.model.entity.AttrValue;
+import com.du.lease.web.admin.service.AttrValueService;
+import com.du.lease.web.admin.mapper.AttrValueMapper;
 import org.springframework.stereotype.Service;
 
 /**

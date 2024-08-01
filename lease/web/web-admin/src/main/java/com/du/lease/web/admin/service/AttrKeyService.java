@@ -1,7 +1,7 @@
 package com.du.lease.web.admin.service;
 
-import com.atguigu.lease.model.entity.AttrKey;
-import com.atguigu.lease.web.admin.vo.attr.AttrKeyVo;
+import com.du.lease.model.entity.AttrKey;
+import com.du.lease.web.admin.vo.attr.AttrKeyVo;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 import java.util.List;
