@@ -3,8 +3,10 @@ package com.du.lease.web.admin.controller.apartment;
 
 import com.du.lease.common.result.Result;
 import com.du.lease.model.entity.LeaseTerm;
+import com.du.lease.web.admin.service.LeaseTermService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,11 +15,13 @@ import java.util.List;
 @RequestMapping("/admin/term")
 @RestController
 public class LeaseTermController {
-
+    @Autowired
+    private LeaseTermService leaseTermService;
     @GetMapping("list")
     @Operation(summary = "查询全部租期列表")
     public Result<List<LeaseTerm>> listLeaseTerm() {
-        return Result.ok();
+        List<LeaseTerm> list = leaseTermService.list();
+        return Result.ok(list);
     }
 
     @PostMapping("saveOrUpdate")
