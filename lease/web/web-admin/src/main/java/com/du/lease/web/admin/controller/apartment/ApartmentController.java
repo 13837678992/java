@@ -1,6 +1,8 @@
 package com.du.lease.web.admin.controller.apartment;
 
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.du.lease.common.exception.LeaseException;
 import com.du.lease.common.result.Result;
@@ -58,13 +60,20 @@ public class ApartmentController {
     @Operation(summary = "根据id修改公寓发布状态")
     @PostMapping("updateReleaseStatusById")
     public Result updateReleaseStatusById(@RequestParam Long id, @RequestParam ReleaseStatus status) {
+        LambdaUpdateWrapper<ApartmentInfo> apartmentInfoLambdaUpdateWrapper = new LambdaUpdateWrapper<>();
+        apartmentInfoLambdaUpdateWrapper.eq(ApartmentInfo::getId, id);
+        apartmentInfoLambdaUpdateWrapper.set(ApartmentInfo::getIsRelease,status);
+        apartmentInfoService.update(apartmentInfoLambdaUpdateWrapper);
         return Result.ok();
     }
 
     @Operation(summary = "根据区县id查询公寓信息列表")
     @GetMapping("listInfoByDistrictId")
     public Result<List<ApartmentInfo>> listInfoByDistrictId(@RequestParam Long id) {
-        return Result.ok();
+        LambdaQueryWrapper<ApartmentInfo> apartmentInfoLambdaQueryWrapper = new LambdaQueryWrapper<>();
+        apartmentInfoLambdaQueryWrapper.eq(ApartmentInfo::getDistrictId, id);
+        List<ApartmentInfo> list = apartmentInfoService.list(apartmentInfoLambdaQueryWrapper);
+        return Result.ok(list);
     }
 }
 
