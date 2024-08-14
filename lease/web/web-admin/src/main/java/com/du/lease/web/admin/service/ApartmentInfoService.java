@@ -1,5 +1,6 @@
 package com.du.lease.web.admin.service;
 
+import com.du.lease.common.exception.LeaseException;
 import com.du.lease.model.entity.ApartmentInfo;
 import com.du.lease.web.admin.vo.apartment.ApartmentDetailVo;
 import com.du.lease.web.admin.vo.apartment.ApartmentItemVo;
@@ -21,4 +22,6 @@ public interface ApartmentInfoService extends IService<ApartmentInfo> {
     IPage<ApartmentItemVo> pageItem(Page<ApartmentItemVo> objectPage, ApartmentQueryVo queryVo);
 
     ApartmentDetailVo getDetailById(Long id);
+
+    void removeApartmentById(Long id) throws LeaseException;
 }

@@ -38,6 +38,7 @@
 
               from apartment_info
                 <where>
+                    is_deleted=0
                     <if test="queryVo.provinceId != null">
                         and province_id = #{queryVo.provinceId}
                     </if>

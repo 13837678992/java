@@ -2,6 +2,7 @@ package com.du.lease.web.admin.controller.apartment;
 
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.du.lease.common.exception.LeaseException;
 import com.du.lease.common.result.Result;
 import com.du.lease.model.entity.ApartmentInfo;
 import com.du.lease.model.enums.ReleaseStatus;
@@ -49,7 +50,8 @@ public class ApartmentController {
 
     @Operation(summary = "根据id删除公寓信息")
     @DeleteMapping("removeById")
-    public Result removeById(@RequestParam Long id) {
+    public Result removeById(@RequestParam Long id) throws LeaseException {
+        apartmentInfoService.removeApartmentById(id);
         return Result.ok();
     }
 
