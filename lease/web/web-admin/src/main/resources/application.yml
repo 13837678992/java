@@ -19,6 +19,8 @@ spring:
     multipart:
       max-file-size: 20MB
       max-request-size: 20MB
+  jackson:
+    time-zone: GMT+8
 
 #用于打印框架生成的sql语句，便于调试
 mybatis-plus:
