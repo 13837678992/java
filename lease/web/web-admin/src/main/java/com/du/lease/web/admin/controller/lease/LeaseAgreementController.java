@@ -20,11 +20,11 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/admin/agreement")
 public class LeaseAgreementController {
     @Autowired
-    private LeaseAgreementService leaseAgreementService;
+    private LeaseAgreementService service;
     @Operation(summary = "保存或修改租约信息")
     @PostMapping("saveOrUpdate")
     public Result saveOrUpdate(@RequestBody LeaseAgreement leaseAgreement) {
-        leaseAgreementService.saveOrUpdate(leaseAgreement);
+        service.saveOrUpdate(leaseAgreement);
         return Result.ok();
     }
 
@@ -32,15 +32,15 @@ public class LeaseAgreementController {
     @GetMapping("page")
     public Result<IPage<AgreementVo>> page(@RequestParam long current, @RequestParam long size, AgreementQueryVo queryVo) {
         Page<AgreementVo> agreementVoPage = new Page<>(current, size);
-        IPage<AgreementVo> result =  leaseAgreementService.pageAgreement(agreementVoPage,queryVo);
-
+        IPage<AgreementVo> result =  service.pageAgreement(agreementVoPage,queryVo);
         return Result.ok(result);
     }
 
     @Operation(summary = "根据id查询租约信息")
     @GetMapping(name = "getById")
     public Result<AgreementVo> getById(@RequestParam Long id) {
-        return Result.ok();
+        AgreementVo apartment = service.getAgreementById(id);
+        return Result.ok(apartment);
     }
 
     @Operation(summary = "根据id删除租约信息")
