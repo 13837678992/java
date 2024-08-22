@@ -1,14 +1,17 @@
 package com.du.lease.web.admin.controller.system;
 
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.du.lease.common.result.Result;
 import com.du.lease.model.entity.SystemUser;
 import com.du.lease.model.enums.BaseStatus;
+import com.du.lease.web.admin.service.SystemUserService;
 import com.du.lease.web.admin.vo.system.user.SystemUserItemVo;
 import com.du.lease.web.admin.vo.system.user.SystemUserQueryVo;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -16,11 +19,15 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/admin/system/user")
 public class SystemUserController {
-
+    @Autowired
+    SystemUserService service;
     @Operation(summary = "根据条件分页查询后台用户列表")
     @GetMapping("page")
     public Result<IPage<SystemUserItemVo>> page(@RequestParam long current, @RequestParam long size, SystemUserQueryVo queryVo) {
-        return Result.ok();
+
+        IPage<SystemUser> page = new Page<>(current, size);
+        IPage<SystemUserItemVo> systemUserPage = service.pageSystemUserByQuery(page, queryVo);
+        return Result.ok(systemUserPage);
     }
 
     @Operation(summary = "根据ID查询后台用户信息")
