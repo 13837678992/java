@@ -1,5 +1,6 @@
 package com.du.lease.model.entity;
 
+import com.baomidou.mybatisplus.annotation.FieldStrategy;
 import com.du.lease.model.enums.BaseStatus;
 import com.du.lease.model.enums.SystemUserType;
 import com.baomidou.mybatisplus.annotation.TableField;
@@ -20,7 +21,7 @@ public class SystemUser extends BaseEntity {
     private String username;
 
     @Schema(description = "密码")
-    @TableField(value = "password")
+    @TableField(value = "password",select = false,updateStrategy = FieldStrategy.NOT_EMPTY)
     private String password;
 
     @Schema(description = "姓名")
