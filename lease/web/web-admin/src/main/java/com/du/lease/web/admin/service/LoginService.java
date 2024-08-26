@@ -6,4 +6,7 @@ import com.du.lease.web.admin.vo.system.user.SystemUserInfoVo;
 
 public interface LoginService {
 
+    CaptchaVo getCaptcha();
+
+    String login(LoginVo loginVo);
 }
