@@ -34,7 +34,7 @@ mybatis-plus:
 
   global-config:
     db-config:
-      update-strategy: ignore
+      update-strategy: IGNORED
 
 minio:
   endpoint: http://100.71.149.5:9000

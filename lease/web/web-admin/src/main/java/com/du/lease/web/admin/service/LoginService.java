@@ -8,5 +8,7 @@ public interface LoginService {
 
     CaptchaVo getCaptcha();
 
-    String login(LoginVo loginVo);
+    String login(LoginVo loginVo) throws Exception;
+
+    SystemUserInfoVo getLoginUserInfo(Long userId);
 }

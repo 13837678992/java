@@ -22,7 +22,7 @@ public class JwtUtil {
                 compact();
         return token;
     }
-    public static Claims parseToken(String token){
+    public static Claims parseToken(String token) throws LeaseException {
 
         if (token==null){
             throw new LeaseException(ResultCodeEnum.ADMIN_LOGIN_AUTH);
